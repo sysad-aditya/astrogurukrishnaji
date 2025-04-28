@@ -92,6 +92,7 @@ header .logo p {
 }
 
 /* Navigation */
+/* Navigation */
 nav {
   margin-top: 30px;
   position: sticky; /* Keeps the navbar fixed at the top of the page */
@@ -139,6 +140,13 @@ nav ul li a:hover {
     right: 0;
     padding: 10px 0;
     display: none; /* Initially hidden */
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%); /* Initially hide the menu */
+  }
+
+  nav.active ul {
+    display: block; /* Show the menu when the toggle button is active */
+    transform: translateY(0); /* Slide the menu into view */
   }
 
   nav ul li {
@@ -149,18 +157,15 @@ nav ul li a:hover {
     font-size: 20px; /* Larger text on small screens */
   }
 
-  nav.active ul {
-    display: block; /* Show the menu when the toggle button is active */
-  }
-
   .menu-toggle {
     display: block; /* Show the hamburger menu on small screens */
-    position: relative;
+    position: absolute;
     top: 20px;
     right: 20px;
     font-size: 30px;
-    cursor: hand;
+    cursor: pointer; /* Makes it clickable */
     color: white;
+    z-index: 1001; /* Ensures it's above the menu */
   }
 }
 
