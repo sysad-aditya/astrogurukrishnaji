@@ -7,7 +7,10 @@ function initAutocomplete() {
     };
     new google.maps.places.Autocomplete(input, options);
 }
-
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+  }
 // Dynamically load the Google Places API with the callback
 (function() {
     var script = document.createElement('script');
