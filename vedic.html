@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Krishna Astrology</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+  <!-- Header -->
+
+ <header>
+  <div class="logo">
+    <h1>🔮 Krishna Astrology</h1>
+    <p>Discover your destiny through the stars</p>
+  </div>
+  <nav>
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="vedic.html">Vedic Birth Chart </a></li>
+    <li><a href="kp.html">Krishnamurti Paddhati (K.P.)</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+</ul>
+  </nav>
+</header>
+
+ <!-- Main Container -->
+  <div class="container">
+    <h2>Request Your Birth Chart</h2>
+    <p>We provide detailed and personalized birth charts based on your birth details. Fill in the form below to get started.</p>
+
+    <form action="https://script.google.com/macros/s/AKfycbz8Swy1wFmffNWHrZ5H3_p3cfDHr10O8TyrjtcA56sqY1_R73Nj5DiZRjXO8k-N-BaDJg/exec" 
+            method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="tob">Time of Birth:</label>
+      <input type="time" id="tob" name="tob" required>
+
+      <label for="pob">Place of Birth:</label>
+      <input type="text" id="pob" name="pob" required placeholder="Start typing your city...">
+	
+	<label for="email">Email ID :</label>
+        <input type="text" id="email" name="email">
+      
+      <h2>Payment Instructions</h2>
+      <p>Please make a payment of Rs. 299 via UPI or Bank Transfer:</p>
+      <ul>
+        <li><strong>UPI ID:</strong> guruji@upi</li>
+        <li><strong>Bank Name:</strong> ABC Bank</li>
+        <li><strong>Account Name:</strong> Guru Astrology</li>
+        <li><strong>Account Number:</strong> 1234567890</li>
+        <li><strong>IFSC:</strong> ABCD0123456</li>
+      </ul>
+      <p>After payment, upload a screenshot below:</p>
+
+              <label for="utr">UTR/Transaction ID (optional):</label>
+        <input type="text" id="utr" name="utr">
+
+        <label for="screenshot">Upload Screenshot:</label>
+        <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+
+        <button type="submit">Submit</button>
+      </form>
+   
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Krishna Astrology. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="autocomplete.js"></script>
+
+  <script>
+    window.addEventListener('load', function () {
+      document.getElementById('preloader').style.display = 'none';
+    });
+  </script>
+<script>
+  window.addEventListener("load", function() {
+    document.getElementById("loader").style.display = "none";
+  });
+</script>
+</body>
+
+</html>
