@@ -58,7 +58,7 @@ body {
 
 /* Container */
 .container {
-    background: rgba(0, 0, 0, 0.7); /* Slightly darker background for readability */
+    background: rgba(0, 0, 0, 0.5); /* Slightly darker background for readability */
     padding: 40px 30px; /* More padding for better spacing */
     border-radius: 15px;
     max-width: 900px; /* Increased max-width */
@@ -158,15 +158,15 @@ nav ul li a:hover {
   }
 
   .menu-toggle {
-    display: block; /* Show the hamburger menu on small screens */
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer; /* Makes it clickable */
-    color: white;
-    z-index: 1001; /* Ensures it's above the menu */
-  }
+  display: block; /* Show the hamburger menu on small screens */
+  position: absolute;
+  top: 10px; /* Adjust this value to position it just below the header */
+  left: 10px; /* Position it on the left side */
+  font-size: 30px;
+  cursor: pointer; /* Makes it clickable */
+  color: white;
+  z-index: 1001; /* Ensures it's above the menu */
+}
 }
 
 /* Optional: Smooth animation for the menu toggle */
