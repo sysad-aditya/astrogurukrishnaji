@@ -440,4 +440,6 @@ background: rgba(0, 0, 0, 0.7); /* Slightly darker background for readability */
   color: #fff;
   line-height: 1.6;
 }
-
+p, h1, h2, h3, h4, h5, h6, li {
+  text-align: justify;
+}
