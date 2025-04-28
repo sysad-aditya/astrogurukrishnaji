@@ -155,11 +155,11 @@ nav ul li a:hover {
 
   .menu-toggle {
     display: block; /* Show the hamburger menu on small screens */
-    position: absolute;
+    position: relative;
     top: 20px;
     right: 20px;
     font-size: 30px;
-    cursor: pointer;
+    cursor: hand;
     color: white;
   }
 }
