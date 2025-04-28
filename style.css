@@ -68,7 +68,7 @@ body {
 
 /* Header */
 header {
-  background: rgba(0, 0, 0, 0.7);  /* Semi-transparent background for header */
+  background: rgba(0, 0, 0, 0.5);  /* Semi-transparent background for header */
   color: white;
   padding: 60px 0;
   text-align: center;
