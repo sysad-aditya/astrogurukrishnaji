@@ -42,7 +42,7 @@
     <p>We provide detailed and personalized birth charts based on your birth details. Fill in the form below to get started.</p>
 
     <form action="https://script.google.com/macros/s/AKfycbz8Swy1wFmffNWHrZ5H3_p3cfDHr10O8TyrjtcA56sqY1_R73Nj5DiZRjXO8k-N-BaDJg/exec" 
-            method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+            method="POST" enctype="multipart/form-data" target="hidden_iframe" onsubmit="submitted=true;">
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" required>
 
@@ -73,16 +73,29 @@
         <input type="text" id="utr" name="utr">
 
         <label for="screenshot">Upload Screenshot:</label>
-        <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
-
+        
+<input type="file" id="screenshot" accept="image/*" required onchange="convertToBase64()" />
+<input type="hidden" name="base64image" id="base64image" />
         <button type="submit">Submit</button>
       </form>
+	  
    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
               onload="if(submitted) document.getElementById('thanksMsg').style.display = 'block';"></iframe>
 
       <p id="thanksMsg" style="display:none; color:green; font-weight:bold; margin-top:10px;">
         ✅ Message sent successfully!
       </p>
+	  <script>
+		  
+		function convertToBase64() {
+  		const file = document.getElementById("screenshot").files[0];
+  		const reader = new FileReader();
+  		reader.onloadend = function () {
+   		document.getElementById("base64image").value = reader.result;
+  		};
+  		reader.readAsDataURL(file);
+		}
+	</script>
 	  <script>
   // Set a timeout to hide the <p> element after 5 seconds
   setTimeout(function() {
