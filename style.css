@@ -502,12 +502,13 @@ p, h1, h2, h3, h4, h5, h6, li {
   position: absolute;
   background-color: white;
   z-index: 1000;
+    color: red;
 }
 
 .autocomplete-suggestions li {
   padding: 8px;
   cursor: pointer;
-color: red
+color: red;
 }
 
 .autocomplete-suggestions li:hover {
