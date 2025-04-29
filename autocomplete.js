@@ -45,4 +45,3 @@ function toggleMenu() {
     nav.classList.toggle('active');
   }
 // Dynamically load the Google Places API with the callback
-();
