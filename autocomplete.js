@@ -1,11 +1,35 @@
 // Function to initialize the autocomplete
 function initAutocomplete() {
-    var input = document.getElementById('pob');
-    var options = {
-        types: ['(cities)'],
-        componentRestrictions: { country: "in" }
-    };
-    new google.maps.places.Autocomplete(input, options);
+    const input = document.getElementById('pob');
+   
+    const suggestionsList = document.getElementById("pob");
+
+    input.addEventListener("input", async () => {
+      const query = input.value.trim();
+      if (!query) {
+        suggestionsList.innerHTML = "";
+        return;
+      }
+
+      try {
+        const response = await fetch(`https://fragrant-bonus-e8ac.sysad-snu.workers.dev/?input=${encodeURIComponent(query)}`);
+        const data = await response.json();
+
+        suggestionsList.innerHTML = "";
+
+        if (data.predictions && Array.isArray(data.predictions)) {
+          data.predictions.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item.description;
+            suggestionsList.appendChild(li);
+          });
+        } else {
+          suggestionsList.innerHTML = "<li>No suggestions found</li>";
+        }
+      } catch (error) {
+        console.error("Error fetching suggestions:", error);
+        suggestionsList.innerHTML = "<li>Error loading suggestions</li>";
+      }
 }
 function toggleMenu() {
     const nav = document.querySelector('nav');
