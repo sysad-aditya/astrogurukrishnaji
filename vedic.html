@@ -77,7 +77,19 @@
 
         <button type="submit">Submit</button>
       </form>
-   
+   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+              onload="if(submitted) document.getElementById('thanksMsg').style.display = 'block';"></iframe>
+
+      <p id="thanksMsg" style="display:none; color:green; font-weight:bold; margin-top:10px;">
+        ✅ Message sent successfully!
+      </p>
+	  <script>
+  // Set a timeout to hide the <p> element after 5 seconds
+  setTimeout(function() {
+    document.getElementById('thanksMsg').style.display = 'none';
+  }, 5000);
+let submitted = false;		  
+</script>
   </div>
 
   <!-- Footer -->
