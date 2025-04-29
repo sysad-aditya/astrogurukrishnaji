@@ -55,7 +55,7 @@
       <label for="pob">Place of Birth:</label>
 <input type="text" id="pob" name="pob" required placeholder="Start typing your city...">
 
-<ul id="suggestions-list"></ul> <!-- Suggestions list for autocomplete -->
+<ul id="suggestions-list" class="autocomplete-suggestions"></ul>
 	
 	<label for="email">Email ID :</label>
         <input type="text" id="email" name="email">
@@ -104,6 +104,9 @@
     document.getElementById('thanksMsg').style.display = 'none';
   }, 5000);
 let submitted = false;		  
+</script>
+	  <script>
+  window.addEventListener("load", initAutocomplete);
 </script>
   </div>
 
