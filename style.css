@@ -507,6 +507,7 @@ p, h1, h2, h3, h4, h5, h6, li {
 .autocomplete-suggestions li {
   padding: 8px;
   cursor: pointer;
+color: red
 }
 
 .autocomplete-suggestions li:hover {
