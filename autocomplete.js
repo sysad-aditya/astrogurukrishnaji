@@ -34,6 +34,12 @@ function initAutocomplete() {
       suggestionsList.innerHTML = "<li>Error loading suggestions</li>";
     }
   });
+  input.addEventListener("blur", function () {
+  setTimeout(() => {
+    closeAllLists();
+  }, 200); // Delay to allow click on suggestion
+});
+
 }
 
 
