@@ -105,9 +105,7 @@
   }, 5000);
 let submitted = false;		  
 </script>
-	  <script>
-  window.addEventListener("load", initAutocomplete);
-</script>
+	  
   </div>
 
   <!-- Footer -->
@@ -117,7 +115,9 @@ let submitted = false;
 
   <!-- Scripts -->
   <script src="autocomplete.js"></script>
-
+<script>
+  window.addEventListener("load", initAutocomplete);
+</script>
   <script>
     window.addEventListener('load', function () {
       document.getElementById('preloader').style.display = 'none';
