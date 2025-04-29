@@ -1,6 +1,6 @@
 // Function to initialize the autocomplete
 function initAutocomplete() {
-    const input = document.getElementById('pob');
+    const input = document.getElementById("pob");
    
     const suggestionsList = document.getElementById("pob");
 
