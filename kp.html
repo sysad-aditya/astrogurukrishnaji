@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Krishna Astrology</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+  <!-- Header -->
+
+ <header>
+  <div class="logo">
+    <h1>🔮 Krishna Astrology</h1>
+    <p>Discover your destiny through the stars</p>
+  </div>
+	 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav>
+   <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="vedic.html">Vedic Birth Chart </a></li>
+    <li><a href="kp.html">Krishnamurti Paddhati (K.P.)</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+</ul>
+  </nav>
+</header>
+
+ <!-- Main Container -->
+  <div class="container">
+    <h2>Ask a Horary Question</h2>
+    <p>Krishnamurti Paddhati can provide answers to pin-pointed questions which demand short or one-word answers.</p>
+
+    <form action="https://script.google.com/macros/s/AKfycbwQ_S3bpaW7MlcSpoNkJuxYutSBict8eOMUq2tmAjEXXbQbwo8j6APPqCSLxvNB1_DF/exec" 
+            method="POST" enctype="multipart/form-data" target="hidden_iframe" onsubmit="submitted=true;">
+      <label for="name">Full Name:</label>
+        <input type="text" name="name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" name="email" required />
+
+        <label for="subject">Question:</label>
+        <input type="text" name="question" required />
+
+      <label for="horary">Horary Number (1 to 249):</label>
+      <select id="horary" name="horary" required>
+        <option value="">Select a number</option>
+        <!-- Generate 1-249 options -->
+        <script>
+          for (let i = 1; i <= 249; i++) {
+            document.write(`<option value="${i}">${i}</option>`);
+          }
+        </script>
+      </select>
+      
+      <h2>Payment Instructions</h2>
+      <p>Please make a payment of Rs. 299 via UPI or Bank Transfer:</p>
+      <ul>
+        <li><strong>UPI ID:</strong> guruji@upi</li>
+        <li><strong>Bank Name:</strong> ABC Bank</li>
+        <li><strong>Account Name:</strong> Guru Astrology</li>
+        <li><strong>Account Number:</strong> 1234567890</li>
+        <li><strong>IFSC:</strong> ABCD0123456</li>
+      </ul>
+      <p>After payment, upload a screenshot below:</p>
+
+              <label for="utr">UTR/Transaction ID (optional):</label>
+        <input type="text" id="utr" name="utr">
+
+        <label for="screenshot">Upload Screenshot:</label>
+        
+<input type="file" id="screenshot" accept="image/*" required onchange="convertToBase64()" />
+<input type="hidden" name="base64image" id="base64image" />
+        <button type="submit">Submit</button>
+      </form>
+	  <script>  
+	let submitted = false;		  
+</script>
+	  
+   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+              onload="if(submitted) document.getElementById('thanksMsg').style.display = 'block';"></iframe>
+
+      <p id="thanksMsg" style="display:none; color:green; font-weight:bold; margin-top:10px;">
+        ✅ Message sent successfully!
+      </p>
+	  <script>
+
+		  
+		function convertToBase64() {
+  		const file = document.getElementById("screenshot").files[0];
+  		const reader = new FileReader();
+  		reader.onloadend = function () {
+   		document.getElementById("base64image").value = reader.result;
+  		};
+  		reader.readAsDataURL(file);
+		}
+	</script>
+	  <script>
+  // Set a timeout to hide the <p> element after 5 seconds
+  setTimeout(function() {
+    document.getElementById('thanksMsg').style.display = 'none';
+  }, 5000);
+	  
+</script>
+	  
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Krishna Astrology. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="autocomplete.js" >
+	  initAutocomplete();
+  </script>
+
+  <!--  <script>
+    window.addEventListener('load', function () {
+      document.getElementById('preloader').style.display = 'none';
+    });
+  </script>  -->
+<script>
+  window.addEventListener("load", function() {
+    document.getElementById("loader").style.display = "none";
+  });
+</script>
+	
+</body>
+
+</html>
