@@ -133,6 +133,9 @@ nav ul li a:hover {
 }
 
 /* Responsive Menu for Small Screens */
+.menu-toggle {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   nav ul {
     flex-direction: column; /* Stack the menu items vertically */
@@ -165,7 +168,7 @@ nav ul li a:hover {
   .menu-toggle {
   display: block; /* Show the hamburger menu on small screens */
   position: absolute;
-  top: 10px; /* Adjust this value to position it just below the header */
+  top: 100%; /* Adjust this value to position it just below the header */
   left: 10px; /* Position it on the left side */
   font-size: 30px;
   cursor: pointer; /* Makes it clickable */
